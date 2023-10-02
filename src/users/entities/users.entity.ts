@@ -1,6 +1,7 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import { Roles } from './role.entity'
+
 @Entity()
 @ObjectType()
 export class Users{
@@ -30,6 +31,11 @@ export class Users{
 
     @UpdateDateColumn()
     updated_at: Date; 
+
+    @OneToMany(() => Roles, role => role.id)
+    role: Roles;
+
+
 
 
 }
