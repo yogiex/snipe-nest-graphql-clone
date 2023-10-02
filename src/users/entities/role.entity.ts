@@ -1,6 +1,6 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn,  } from 'typeorm';
-import {Users} from './users.entity'
+import { Users } from './users.entity'
 export enum UserRole {
     PETUGAS_TOKO = 'petugas_toko',
     SUPLIER = 'suplier',
@@ -17,8 +17,7 @@ export class Roles{
 
     @Column({
         type: 'enum',
-        enum: UserRole,
-        default: UserRole.PETUGAS_TOKO
+        enum: UserRole
     })
     @Field()
     role_name: UserRole;
@@ -26,5 +25,8 @@ export class Roles{
     @Column()
     @Field()
     description: string;
+
+    @ManyToOne(() => Users, user => user.role)
+    users: Users[];
 
 }

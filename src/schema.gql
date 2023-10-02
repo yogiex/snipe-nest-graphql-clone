@@ -1,0 +1,19 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Users {
+  id: Int!
+  name: String!
+  email: String!
+  password: String!
+  birthOfDate: String!
+}
+
+type Query {
+  owners: [Users!]!
+}
+
+type Mutation {
+  createUser: Users!
+}

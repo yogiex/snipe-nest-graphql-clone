@@ -10,7 +10,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { UsersModule } from './users/users.module';
 import { AssetsModule } from './assets/assets.module';
-import { Users } from './users/entities/users.entity';
+
+// import { Users } from './users/entities/users.entity';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -26,7 +27,7 @@ import { Users } from './users/entities/users.entity';
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_DB,
-      entities: [Users],
+      entities: [],
       synchronize: true,
     }),
     UsersModule,
