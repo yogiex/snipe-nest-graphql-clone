@@ -27,4 +27,8 @@ export class UsersResolver {
     findOne(@Args('id', { type: () => Int }) id: number){
         return this.userService.findOne(id)
     }
+
+    updateUser(){}
+
+    deleteUser(){}
 }
