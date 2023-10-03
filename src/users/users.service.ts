@@ -24,4 +24,25 @@ export class UsersService {
     findOne(id: any){
         return this.userRepository.findOne(id);
     }
+
+    createUser(){
+        // return this.userRepository.save()
+        return {
+            msg:"created user"
+        }
+    }
+
+    updateUser(id: any){
+        return {
+            msg: "user updated",
+            id_user: id
+        }
+    }
+
+    deleteUser(id: any){
+        return {
+            msg: "deleted user",
+            id_user: id
+        }
+    }
 }
